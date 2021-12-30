@@ -1,7 +1,6 @@
 // Set date
 var countdownDate = new Date(
-	// "January 1, 2022 00:00:00"
-	"December 30, 2021 23:24:00"
+	"January 1, 2022 00:00:00"
 ).getTime(); /* hrs: min: sec */
 
 //Testing sounds
