@@ -9,8 +9,9 @@ body {
 	padding: 0;
 	margin: 0;
 	user-select: none;
-	background-color: #0c1445;
+	background:#000 url(movingstar.gif) repeat top center;	
 }
+  
 canvas {
 	transition: background 2s;
 	width: 100vw;
@@ -33,7 +34,7 @@ canvas {
 	left: 50%;
 	transform: translate(-50%, -70%);
 	text-align: justify;
-	width: 50%;
+	width: 60%;
 	text-align: center;
 }
 #countdown-box:after {

@@ -1,8 +1,16 @@
 // Set date
 var countdownDate = new Date(
 	// "January 1, 2022 00:00:00"
-	"December 30, 2021 21:04:00"
+	"December 30, 2021 23:24:00"
 ).getTime(); /* hrs: min: sec */
+
+//Testing sounds
+function sound(){
+	var audio = new Audio('explosion0.mp3');
+	volume = 100;
+	audio.autoplay=true;
+	audio.play();
+}
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -28,7 +36,8 @@ var x = setInterval(function () {
 	if (distance < 0) {
 		clearInterval(x);
 		document.getElementById("countdown-box").innerHTML =
-			"<span class='cdi'>Happy New Year!!!</span>";
+			"<span class='cdi'>HAPPY NEW YEAR</span>";
+		document.getElementById("countdown-box").style.fontFamily = "Festive";//"Brush Script MT";
 		document.querySelector(".title").innerText = "";
 	}
 }, 1000);
@@ -73,7 +82,7 @@ var canvas = document.getElementById("canvas"),
 	hue = 120, // starting hue
 	limiterTotal = 5, // limit 5 when click trigger
 	limiterTick = 0, // launch timer
-	timerTotal = 10, //total time to make a new firework
+	timerTotal = 20, //total time to make a new firework
 	timerTick = 0,
 	mousedown = false,
 	mx, // mouse x coordinate,
@@ -242,17 +251,10 @@ Particle.prototype.draw = function () {
 
 // create particle group & explosion
 function createParticles(x, y) {
-	var particleCount = 50; // increase the particle count for a bigger explosion// Play Sound
+	var particleCount = 100; // increase the particle count for a bigger explosion// Play Sound
 	while (particleCount--) {
 		particles.push(new Particle(x, y));
 	}
-}
-
-//Testing sounds
-function sound(){
-	var audio = new Audio('explosion0.mp3');
-	volume = 100;
-	audio.play();
 }
 
 /********************
@@ -339,17 +341,6 @@ canvas.addEventListener("mouseup", function (e) {
 	e.preventDefault();
 	mousedown = false;
 });
-
-//For testing, adding touch function
-canvas.addEventListener("touchstart",function(e){
-	e.preventDefault();
-	mousedown=true;
-})
-
-canvas.addEventListener("touchend",function(e){
-	e.preventDefault();
-	mousedown=false;
-})
 
 window.addEventListener("resize", onResize);
 
