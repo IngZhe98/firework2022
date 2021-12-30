@@ -1,6 +1,7 @@
 // Set date
 var countdownDate = new Date(
-	"January 1, 2022 00:00:00"
+	// "January 1, 2022 00:00:00"
+	"December 30, 2021 19:14:00"
 ).getTime(); /* hrs: min: sec */
 
 // Update the count down every 1 second
@@ -27,7 +28,7 @@ var x = setInterval(function () {
 	if (distance < 0) {
 		clearInterval(x);
 		document.getElementById("countdown-box").innerHTML =
-			"<span class='cdi'>Happy New Year!!</span>";
+			"<span class='cdi'>Happy New Year!!!</span>";
 		document.querySelector(".title").innerText = "";
 	}
 }, 1000);
@@ -70,9 +71,9 @@ var canvas = document.getElementById("canvas"),
 	fireworks = [],
 	particles = [],
 	hue = 120, // starting hue
-	limiterTotal = 10, // limit 5 when click trigger
+	limiterTotal = 5, // limit 5 when click trigger
 	limiterTick = 0, // launch timer
-	timerTotal = 80,
+	timerTotal = 10, //total time to make a new firework
 	timerTick = 0,
 	mousedown = false,
 	mx, // mouse x coordinate,
