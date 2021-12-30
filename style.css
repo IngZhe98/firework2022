@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Eczar:wght@400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html,
+body {
+	font-family: 'Poppins', sans-serif;;
+	color: #f5f5f5;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	user-select: none;
+	/* background-color: #0c1445; */
+	background-color: #000;
+}
+canvas {
+	transition: background 2s;
+	width: 100vw;
+	height: 100vh;
+	cursor: pointer;
+}
+.title {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	font-size: 7em;
+	padding: 0;
+	margin: 0;
+}
+#countdown-box {
+	z-index: 1;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -70%);
+	text-align: justify;
+	width: 90%;
+	text-align: center;
+}
+#countdown-box:after {
+	display: inline-block;
+	width: 100%;
+	content: "";
+}
+.cdi {
+	display: inline-block;
+	font-size: 5em;
+	text-align: center;
+	color: #f5f5f5;
+}
+.cdi-lbl {
+	font-size: 0.5em;
+}
+@media (max-width: 775px) {
+	.title {
+		top: 0.5em;
+	}
+	#countdown-box {
+		text-align: center;
+		top: 75%;
+	}
+	/*#countdown-box:after {
+		content: none;
+	}*/
+	.cdi {
+		/*display: block;*/
+		font-size: 2em;
+	}
+	.cdi-lbl {
+		color: #f5f5f5;
+	}
+}
