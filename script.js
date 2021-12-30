@@ -1,5 +1,3 @@
-// Play Sound
-var audio = new Audio('sounds/explosion0');
 // Set date
 var countdownDate = new Date(
 	// "January 1, 2022 00:00:00"
@@ -157,6 +155,7 @@ Firework.prototype.update = function (index) {
 	// if the distance traveled, including velocities, is greater than the initial distance to the target, then the target has been reached
 	if (this.distanceTraveled >= this.distanceToTarget) {
 		createParticles(this.tx, this.ty);
+		sound();
 		fireworks.splice(index, 1); // remove the firework, use the index passed into the update function to determine which to remove
 	} else {
 		// target not reached, keep traveling
@@ -243,11 +242,17 @@ Particle.prototype.draw = function () {
 
 // create particle group & explosion
 function createParticles(x, y) {
-	var particleCount = 50; // increase the particle count for a bigger explosion
-	audio.play();
+	var particleCount = 50; // increase the particle count for a bigger explosion// Play Sound
 	while (particleCount--) {
 		particles.push(new Particle(x, y));
 	}
+}
+
+//Testing sounds
+function sound(){
+	var audio = new Audio('explosion0.mp3');
+	volume = 100;
+	audio.play();
 }
 
 /********************
