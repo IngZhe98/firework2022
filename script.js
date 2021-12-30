@@ -1,7 +1,9 @@
+// Play Sound
+var audio = new Audio('sounds/explosion0');
 // Set date
 var countdownDate = new Date(
 	// "January 1, 2022 00:00:00"
-	"December 30, 2021 19:14:00"
+	"December 30, 2021 21:04:00"
 ).getTime(); /* hrs: min: sec */
 
 // Update the count down every 1 second
@@ -241,7 +243,8 @@ Particle.prototype.draw = function () {
 
 // create particle group & explosion
 function createParticles(x, y) {
-	var particleCount = 30; // increase the particle count for a bigger explosion
+	var particleCount = 50; // increase the particle count for a bigger explosion
+	audio.play();
 	while (particleCount--) {
 		particles.push(new Particle(x, y));
 	}
