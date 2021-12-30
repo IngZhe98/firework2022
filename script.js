@@ -70,7 +70,7 @@ var canvas = document.getElementById("canvas"),
 	fireworks = [],
 	particles = [],
 	hue = 120, // starting hue
-	limiterTotal = 5, // limit 5 when click trigger
+	limiterTotal = 10, // limit 5 when click trigger
 	limiterTick = 0, // launch timer
 	timerTotal = 80,
 	timerTick = 0,
@@ -330,6 +330,17 @@ canvas.addEventListener("mouseup", function (e) {
 	e.preventDefault();
 	mousedown = false;
 });
+
+//For testing, adding touch function
+canvas.addEventListener("touchstart",function(e){
+	e.preventDefault();
+	mousedown=true;
+})
+
+canvas.addEventListener("touchend",function(e){
+	e.preventDefault();
+	mousedown=false;
+})
 
 window.addEventListener("resize", onResize);
 

@@ -9,8 +9,7 @@ body {
 	padding: 0;
 	margin: 0;
 	user-select: none;
-	/* background-color: #0c1445; */
-	background-color: #000;
+	background-color: #0c1445;
 }
 canvas {
 	transition: background 2s;
